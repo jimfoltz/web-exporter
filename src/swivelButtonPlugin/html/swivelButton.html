@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC 
+          "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- copyright 2008 Google --!>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>SketchUp Web Exporter</title>
+  <SCRIPT type="text/javascript" src="../js/swivelButtonBase.js"></SCRIPT>
+  <SCRIPT type="text/javascript" src="../js/treeView.js"></SCRIPT>
+  <SCRIPT type="text/javascript" src="../js/createDirectoryDialog.js"></SCRIPT>
+  <SCRIPT type="text/javascript" src="../js/getDirectoryDialog.js"></SCRIPT>
+  <SCRIPT type="text/javascript" src="../js/swivelButton.js"></SCRIPT>
+  <LINK type="text/css" rel="stylesheet" href="treeView.css">
+  <LINK type="text/css" rel="stylesheet" href="getDirectoryDialog.css">
+  <LINK type="text/css" rel="stylesheet" href="swivelButton.css">
+  
+  <script>
+    function openHelp() {
+      //window.location="skp:openPage@help.html"
+      window.open("help.html");
+    }
+  </script>
+</head>
+<body>
+<img id=logo src="../images/swivelButton.png">
+
+<table width=100%>
+  <tr>
+    <td id=title>SketchUp Web Exporter<sup style="color:red"> <font size="3">Beta</font></sup></td>
+    <td id=help>
+      <a href="#" onclick="window.open('http://sketchupwebexporter.googlepages.com/sketchupwebexporterplugin');return false;">
+        Help</a>
+    </td>
+  </tr>
+</table>
+
+<div id="status">
+  Exports an interactive web animation of your model.
+</div>
+
+<CENTER>
+  <img id="spinningImage" src="../images/swivelButtonTempImage.jpg">
+</CENTER>
+
+<CENTER>
+  <iframe id="resultsFrame" src="about:blank" scrolling="no" ></iframe>
+  <div id="ruler">
+    <span id="rulerLeftSpace">&nbsp;</span>
+    <input id="imageWidthInput" type="text" value="400" size="1"
+           onkeypress="return pickImageCount()" 
+           onkeyup="return checkReturn(window.event, resizeImage);" 
+           onblur="return resizeImage();"/>
+    <span id="rulerUnits">pixels</span>
+  </div>
+</CENTER>
+
+<table id="segmentTable">
+  <tr>
+    <td valign=middle><img src="../images/segment.png"></td>
+    <td>
+      <span id="snapshotOffset01">Take a snapshot every:</span>
+      <span id="currentAngle">10</span>
+      <span id="swivelMenuDownArrow"
+            onclick="return showAngleMenu();" 
+         />
+        <img src="../images/downArrow.png" >
+      </span>
+
+      <ul id="angleMenu" class="swivelMenu">
+        <li><a href="#" class=swivelMenuItem 
+               onclick="handleAngleMenu(45);">45</a></li>
+
+        <li><a href="#" class=swivelMenuItem 
+               onclick="handleAngleMenu(30);">30</a></li>
+
+        <li><a href="#" class=swivelMenuItem
+               onclick="handleAngleMenu(20);">20</a></li>
+
+        <li><a href="#" class=swivelMenuItem 
+               onclick="handleAngleMenu(10);">10</a></li>
+
+        <li><a href="#" class=swivelMenuItem 
+               onclick="handleAngleMenu(5);">&nbsp;&nbsp;5</a></li>
+      </ul>
+      <span id="snapshotOffset02">
+        degrees (<span id="numRequiredPictures">8</span> total images).
+      </span>
+    </td>
+  </tr>
+</table>
+
+<table id="changeLocationTable">
+  <tr>
+    <td>
+      <input type="button" class="button" id="changeLocation" 
+             value="Change Location" 
+             onclick="pickDirectory();" />
+    </td>
+    <td>
+      <span class="javascriptLink" id="outputDirectory" onclick="pickDirectory()">
+        No Directory Specified...
+      </span>
+    </td>
+  </tr>
+</table>
+
+<div id="finishTable">
+  <div id="doneMessage">
+    <B>Done!</B> Try clicking and dragging on the image above.
+  </div>
+
+  <a id="showFolder" href="javascript:handleOpenFolder()">
+    Open the output folder</a>
+  <BR><BR>
+  <a id="whatNow" 
+     href="#"
+     onclick="openHelp()"
+     >Information on publishing web animations</a>
+  <BR>
+  <input type="button" class="button" id="closeButton"
+         onclick="window.location='skp:close'" value="Close">
+</div>
+
+<table width=100%>
+  <tr>
+    <td>
+      <input type="button" class="button" id="cancelButton" 
+             value="Cancel" onclick="handleCancel()">
+    </td>
+    <td align=right>
+      <input type="button" class="button" id="createButton" 
+             value="Create!" onclick="handleCreateButton()">
+    </td>
+  </tr>
+</table>
+</body>
+</html>

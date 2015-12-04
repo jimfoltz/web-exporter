@@ -1,0 +1,111 @@
+<html>
+<head>
+<STYLE TYPE="text/css">
+<!--
+.indented {
+  padding-left: 50pt;
+  padding-right: 50pt;
+}
+
+BODY {
+ font-family: arial;
+ font-size: 12px;
+ margin-left: 35px;
+ margin-right: 35px;
+ margin-top: 5px;
+ margin-bottom: 5px;
+}
+
+TD {
+ font-family: arial;
+ font-size: 12px;
+}
+
+#title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#faq {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+-->
+</STYLE>
+</head>
+<body>
+<img src="../images/swivelButton.png">
+<span id="title">SketchUp Web Exporter<sup style="color:red"> <font size="3">Beta</font></sup></span><br><br>
+      <table>
+        <tr>
+          <td style="background:lightblue">
+            <b >Q: What does this create?</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            The SketchUp Web Exporter creates a directory containing a number of images, an HTML file and a ZIP containing the HTML and the images.
+<BR><BR>
+          </td>
+        </tr>
+        <tr>
+          <td style="background:lightblue">
+            <b>Q: How do I add my web export to a web page?</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            First, upload the HTML and image files to a web server (e.g., <a href="http://pages.google.com">pages.google.com</a>). Remember the URL of the HTML file.
+            <p> Then edit your webpage with this line
+              <span class="indented"><pre>&lt;iframe frameborder="0" width="310" height="300" src="<i>URL</i>"&gt;&lt;/iframe&gt;</pre></span>
+            where you put in the correct height and width values and the URL to the HTML file you posted in the first step.
+<BR><BR>
+          </td>
+        </tr>
+        <tr>
+          <td style="background:lightblue">
+            <b>Q: Why does this page ask about running ActiveX (Internet Explorer only)?</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            If you see this warning:
+              <p><img src="../images/activeX.png"></p>
+            it is simply because the SketchUp Web Exporter uses JavaScript to drive its interaction.  Internet Explorer will warn you when you first load a web page that
+            uses JavaScript if that page is accessed directly off of your file system.  This warning will not appear once you post the HTML file to a web server. 
+            If is safe to allow this page to run JavaScript.
+            <p>
+            Other browsers like <a
+            href="http://www.mozilla.com/firefox/">FireFox</a> will not
+            issue this warning.
+<BR><BR>
+          </td>
+        </tr>
+        <tr>
+          <td style="background:lightblue">
+            <b>Additional Resources</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+<a href='http://www.youtube.com/watch?v=j0Tmlko5YTU' target="blank">Help Video</a>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+<a  target="blank" href='http://groups.google.com/group/SketchUp/search?group=SketchUp&q=%22SketchUp+web+exporter%22&qt_g=Search+this+group'>Discussion</a>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+<a  target="blank" href='http://www.google.com/search?hl=en&q=embedding+iframes'>Learn about embedding IFRAMEs</a>
+          </td>
+        </tr>
+        
+      </table>
+</body>
+</html>

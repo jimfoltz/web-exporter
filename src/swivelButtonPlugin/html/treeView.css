@@ -1,0 +1,20 @@
+.treeViewNode {
+	font: 11px arial;
+  vertical-align: middle;
+	cursor: pointer;
+	cursor: hand;
+	margin-left: 15px;
+}
+
+.treeViewNodeUnselected {
+  margin-left: 3px;
+}
+
+.treeViewNodeSelected {
+  color: #FFFFFF;
+  background-color: #335EA8;
+  overflow: hidden;
+}
+
+
+
